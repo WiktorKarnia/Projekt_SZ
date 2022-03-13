@@ -13,6 +13,12 @@
 
     <!-- IMPORT STYLES -->
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function show()
+        {
+          document.getElementById("tables").style.display="block"; 
+        }
+    </script>
 </head>
 <body>
     <section class="nav">
@@ -23,14 +29,16 @@
     <section class="main">
         <div class="container">
             <h1 class="main_title">Title description</h1>
+            <p class="main_desc">Aplikacja umożliwiająca planowanie zasobów przedsiębiorstwa produkującego łóżka.</p>
+            <p class="instructions">Aby użyć aplikacji wypełnij poniższe pola danymi pasującymi do opisów, następnie naciśnij przycisk "Submit" i poczekaj na wyniki które pojawią poniżej w tabelach. </p>
             <hr class="main_hr">
             <form action="#">
 
                 <div class="main_wrapper">
                     <div class="main_item">
-                        <div class="main_item_title">GHP</div>
+                        <div class="main_item_title">GHP: Łóżka</div>
                         <div class="main_item_wrapper">
-                            <label for="lead_time" class="main_item_descr">Czas realizacji:</label>
+                            <label for="lead_time" class="main_item_descr">Czas realizacji (w tygodniach):</label>
                             <input type="number" min="1" id="lead_time" name="lead_time" class="main_item_input">
 
                             <label for="in_stock" class="main_item_descr">Na stanie:</label>
@@ -47,7 +55,7 @@
                         <div class="main_item_title">Materac</div>
                         <div class="main_item_wrapper main_item_wrapper_v2">
 
-                            <label for="lead_time_mattress" class="main_item_descr">Czas realizacji:</label>
+                            <label for="lead_time_mattress" class="main_item_descr">Czas realizacji (w tygodniach):</label>
                             <input type="number" min="1" id="lead_time_mattress" name="lead_time_mattress" class="main_item_input">
 
                             <label for="lot_size_matt" class="main_item_descr">Wielkość partii:</label>
@@ -62,7 +70,7 @@
                         <div class="main_item_title">Rama</div>
                         <div class="main_item_wrapper main_item_wrapper_v2">
                             
-                            <label for="lead_time_frame" class="main_item_descr">Czas realizacji:</label>
+                            <label for="lead_time_frame" class="main_item_descr">Czas realizacji (w tygodniach):</label>
                             <input type="number" min="1" id="lead_time_frame" name="lead_time_frame" class="main_item_input">
 
                             <label for="lot_size_frame" class="main_item_descr">Wielkość partii:</label>
@@ -77,7 +85,7 @@
                         <div class="main_item_title">Deski</div>
                         <div class="main_item_wrapper main_item_wrapper_v2">
                             
-                            <label for="lead_time_boards" class="main_item_descr">Czas realizacji:</label>
+                            <label for="lead_time_boards" class="main_item_descr">Czas realizacji (w tygodniach):</label>
                             <input type="number" min="1" id="lead_time_boards" name="lead_time_boards" class="main_item_input">
 
                             <label for="lot_size_boards" class="main_item_descr">Wielkość partii:</label>
@@ -92,7 +100,7 @@
                         <div class="main_item_title">Nogi</div>
                         <div class="main_item_wrapper main_item_wrapper_v2">
                             
-                            <label for="lead_time_legs" class="main_item_descr">Czas realizacji:</label>
+                            <label for="lead_time_legs" class="main_item_descr">Czas realizacji (w tygodniach):</label>
                             <input type="number" min="1" id="lead_time_legs" name="lead_time_legs" class="main_item_input">
 
                             <label for="lot_size_legs" class="main_item_descr">Wielkość partii:</label>
@@ -107,7 +115,7 @@
                         <div class="main_item_title">Stelaże</div>
                         <div class="main_item_wrapper main_item_wrapper_v2">
                             
-                            <label for="lead_time_racks" class="main_item_descr">Czas realizacji:</label>
+                            <label for="lead_time_racks" class="main_item_descr">Czas realizacji (w tygodniach):</label>
                             <input type="number" min="1" id="lead_time_racks" name="lead_time_racks" class="main_item_input">
 
                             <label for="lot_size_racks" class="main_item_descr">Wielkość partii:</label>
@@ -121,13 +129,660 @@
                 </div>
 
                 <div class="container_button">
-                    <input type="submit" class="submit_button" value="Submit">
+                    <input type="submit" class="submit_button" value="Submit" onclick="show()">
                 </div>
 
             </form>
         </div>
     </section>
-
+    <section>
+        <div id="tables" style="display:none;">
+           <div class="table" id="ghp_table">
+               <table class="ghp">
+               <caption class="table_caption">GHP</caption>
+               <thead>
+                 <tr>
+                   <th class="ghp-dvpl">tydzień</th>
+                   <th class="ghp-0pky">1</th>
+                   <th class="ghp-0pky">2</th>
+                   <th class="ghp-0pky">3</th>
+                   <th class="ghp-0pky">4</th>
+                   <th class="ghp-0pky">5</th>
+                   <th class="ghp-0pky">6</th>
+                   <th class="ghp-0pky">7</th>
+                   <th class="ghp-0pky">8</th>
+                   <th class="ghp-0pky">9</th>
+                   <th class="ghp-0pky">10</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <td class="ghp-0pky">Przewidywany popyt</td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                 </tr>
+                 <tr>
+                   <td class="ghp-0pky">Produkcja</td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                 </tr>
+                 <tr>
+                   <td class="ghp-0pky">Dostępne</td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                   <td class="ghp-0pky"></td>
+                 </tr>
+                 <tr>
+                   <td class="ghp-0pky">Czas realizacji = <br>Na stanie = </td>
+                   <td class="ghp-zv4m"></td>
+                   <td class="ghp-zv4m"></td>
+                   <td class="ghp-zv4m"></td>
+                   <td class="ghp-zv4m"></td>
+                   <td class="ghp-zv4m"></td>
+                   <td class="ghp-zv4m"></td>
+                   <td class="ghp-zv4m"></td>
+                   <td class="ghp-zv4m"></td>
+                   <td class="ghp-zv4m"></td>
+                   <td class="ghp-zv4m"></td>
+                 </tr>
+               </tbody>
+               </table>
+             </div>
+               <br><br><br>
+               <div class="table" id="mattres_table">
+               <table class="mrp-m">
+                 <caption class="table_caption">Materace</caption>
+                   <thead>
+                     <tr>
+                       <th class="mrp-m-c3ow"><span style="font-weight:bold">                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Okres</span><br><span style="font-weight:bold">Dane produkcyjne</span></th>
+                       <th class="mrp-m-c3ow">1</th>
+                       <th class="mrp-m-c3ow">2</th>
+                       <th class="mrp-m-c3ow">3</th>
+                       <th class="mrp-m-c3ow">4</th>
+                       <th class="mrp-m-c3ow">5</th>
+                       <th class="mrp-m-c3ow">6</th>
+                       <th class="mrp-m-c3ow">7</th>
+                       <th class="mrp-m-c3ow">8</th>
+                       <th class="mrp-m-c3ow">9</th>
+                       <th class="mrp-m-c3ow">10</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td class="mrp-m-0pky">Całkowite zapotrzebowanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Przewidywane na stanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Zapotrzebowanie netto</td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane zamówienia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Czas realizacji = <br>Wielkość partii = <br>Poziom BOM = <br>Na stanie =</td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                     </tr>
+                   </tbody>
+                   </table>
+                 </div>
+                   <br><br><br>
+               <div class="table" id="frame_table">
+               <table class="mrp-m">
+                 <caption class="table_caption">Ramy</caption>
+                   <thead>
+                     <tr>
+                       <th class="mrp-m-c3ow"><span style="font-weight:bold">                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Okres</span><br><span style="font-weight:bold">Dane produkcyjne</span></th>
+                       <th class="mrp-m-c3ow">1</th>
+                       <th class="mrp-m-c3ow">2</th>
+                       <th class="mrp-m-c3ow">3</th>
+                       <th class="mrp-m-c3ow">4</th>
+                       <th class="mrp-m-c3ow">5</th>
+                       <th class="mrp-m-c3ow">6</th>
+                       <th class="mrp-m-c3ow">7</th>
+                       <th class="mrp-m-c3ow">8</th>
+                       <th class="mrp-m-c3ow">9</th>
+                       <th class="mrp-m-c3ow">10</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td class="mrp-m-0pky">Całkowite zapotrzebowanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Przewidywane na stanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Zapotrzebowanie netto</td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane zamówienia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Czas realizacji = <br>Wielkość partii = <br>Poziom BOM = <br>Na stanie =</td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                     </tr>
+                   </tbody>
+                   </table>
+                 </div>
+                   <br><br><br>
+               <div class="table" id="planks_table">
+               <table class="mrp-m">
+                 <caption class="table_caption">Deski</caption>
+                   <thead>
+                     <tr>
+                       <th class="mrp-m-c3ow"><span style="font-weight:bold">                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Okres</span><br><span style="font-weight:bold">Dane produkcyjne</span></th>
+                       <th class="mrp-m-c3ow">1</th>
+                       <th class="mrp-m-c3ow">2</th>
+                       <th class="mrp-m-c3ow">3</th>
+                       <th class="mrp-m-c3ow">4</th>
+                       <th class="mrp-m-c3ow">5</th>
+                       <th class="mrp-m-c3ow">6</th>
+                       <th class="mrp-m-c3ow">7</th>
+                       <th class="mrp-m-c3ow">8</th>
+                       <th class="mrp-m-c3ow">9</th>
+                       <th class="mrp-m-c3ow">10</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td class="mrp-m-0pky">Całkowite zapotrzebowanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Przewidywane na stanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Zapotrzebowanie netto</td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane zamówienia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Czas realizacji = <br>Wielkość partii = <br>Poziom BOM = <br>Na stanie =</td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                     </tr>
+                   </tbody>
+                   </table>
+                 </div>
+                   <br><br><br>
+               <div class="table" id="legs_table">
+               <table class="mrp-m">
+                 <caption class="table_caption">Nogi</caption>
+                   <thead>
+                     <tr>
+                       <th class="mrp-m-c3ow"><span style="font-weight:bold">                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Okres</span><br><span style="font-weight:bold">Dane produkcyjne</span></th>
+                       <th class="mrp-m-c3ow">1</th>
+                       <th class="mrp-m-c3ow">2</th>
+                       <th class="mrp-m-c3ow">3</th>
+                       <th class="mrp-m-c3ow">4</th>
+                       <th class="mrp-m-c3ow">5</th>
+                       <th class="mrp-m-c3ow">6</th>
+                       <th class="mrp-m-c3ow">7</th>
+                       <th class="mrp-m-c3ow">8</th>
+                       <th class="mrp-m-c3ow">9</th>
+                       <th class="mrp-m-c3ow">10</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td class="mrp-m-0pky">Całkowite zapotrzebowanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Przewidywane na stanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Zapotrzebowanie netto</td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane zamówienia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Czas realizacji = <br>Wielkość partii = <br>Poziom BOM = <br>Na stanie =</td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                     </tr>
+                   </tbody>
+                   </table>
+                 </div>
+                   <br><br><br>
+               <div class="table" id="stelaz_table">
+               <table class="mrp-m">
+                 <caption class="table_caption">Stelaże</caption>
+                   <thead>
+                     <tr>
+                       <th class="mrp-m-c3ow"><span style="font-weight:bold">                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Okres</span><br><span style="font-weight:bold">Dane produkcyjne</span></th>
+                       <th class="mrp-m-c3ow">1</th>
+                       <th class="mrp-m-c3ow">2</th>
+                       <th class="mrp-m-c3ow">3</th>
+                       <th class="mrp-m-c3ow">4</th>
+                       <th class="mrp-m-c3ow">5</th>
+                       <th class="mrp-m-c3ow">6</th>
+                       <th class="mrp-m-c3ow">7</th>
+                       <th class="mrp-m-c3ow">8</th>
+                       <th class="mrp-m-c3ow">9</th>
+                       <th class="mrp-m-c3ow">10</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td class="mrp-m-0pky">Całkowite zapotrzebowanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Przewidywane na stanie</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Zapotrzebowanie netto</td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                       <td class="mrp-m-de2y"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane zamówienia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Planowane przyjęcia</td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                       <td class="mrp-m-0pky"></td>
+                     </tr>
+                     <tr>
+                       <td class="mrp-m-0pky">Czas realizacji = <br>Wielkość partii = <br>Poziom BOM = <br>Na stanie =</td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                       <td class="mrp-m-zv4m"></td>
+                     </tr>
+                   </tbody>
+                   </table>
+                 </div>
+               </div>
+    </section>
     <footer class="footer">
         <div class="container">
             <h3 class="footer_title">Developed by</h3>
