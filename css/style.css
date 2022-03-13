@@ -14,7 +14,7 @@ body{margin:0;font-family:"Lexend",sans-serif}.container{width:1600px;margin:0 a
 
 .ghp td, .mrp-m td {
 	font-size: 25px;
-    border: 1px solid #dddddd;
+    border: 1px solid #E9EBED;
 	padding: 5px;
 }
 
@@ -23,7 +23,7 @@ body{margin:0;font-family:"Lexend",sans-serif}.container{width:1600px;margin:0 a
     font-weight: bold;
 	padding: 5px;
 	background: #efefef;
-	border: 1px solid #dddddd;
+	border: 1px solid #E9EBED;
 }
 
 .ghp .ghp-zv4m, .mrp-m .mrp-m-zv4m {
