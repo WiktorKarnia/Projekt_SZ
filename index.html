@@ -28,12 +28,40 @@
 
     <section class="main">
         <div class="container">
-            <h1 class="main_title">Title description</h1>
+            <h1 class="main_title">Usleep</h1>
             <p class="main_desc">Aplikacja umożliwiająca planowanie zasobów przedsiębiorstwa produkującego łóżka.</p>
             <p class="instructions">Aby użyć aplikacji wypełnij poniższe pola danymi pasującymi do opisów, następnie naciśnij przycisk "Submit" i poczekaj na wyniki które pojawią poniżej w tabelach. </p>
             <hr class="main_hr">
             <form action="#">
                 <div class="main_wrapper">
+                    <div class="delivery">
+                      <div class="main_item_title">Dostawa</div>
+                        <div class="delivery_wrapper">
+                            <label for="order_size" class="main_item_descr">Ilość zamówionych łóżek:</label>
+                            <input type="number" min="1" id="lead_time" name="lead_time" class="main_item_input">
+
+                            <label for="delivery_count" class="main_item_descr">Ilość dostaw na zamówiene:</label>
+                            <input type="number" min="1" max="5" id="in_stock" name="in_stock" class="main_item_input">
+
+                            <label for="first_expected_delivery_week" class="main_item_descr">Pierwsza dostawa w ... tygodniu:</label>
+                            <input type="number" min="1" id="expected_demand_week" name="expected_demand_week" class="main_item_input">
+
+                            <label for="first_delivery_size" class="main_item_descr">Liczba łóżek w pierwszej dostawie:</label>
+                            <input type="number" min="1" id="number_weeks" name="number_weeks" class="main_item_input">
+                            
+                            <label for="second_expected_delivery_week" class="main_item_descr">Druga dostawa w ... tygodniu:</label>
+                            <input type="number" min="1" id="expected_demand_week" name="expected_demand_week" class="main_item_input">
+
+                            <label for="second_delivery_size" class="main_item_descr">Liczba łóżek w drugiej dostawie:</label>
+                            <input type="number" min="1" id="number_weeks" name="number_weeks" class="main_item_input">
+                            
+                            <label for="third_expected_delivery_week" class="main_item_descr">Trzecia dostawa w ... tygodniu:</label>
+                            <input type="number" min="1" id="expected_demand_week" name="expected_demand_week" class="main_item_input">
+
+                            <label for="third_delivery_size" class="main_item_descr">Liczba łóżek w trzeciej dostawie:</label>
+                            <input type="number" min="1" id="number_weeks" name="number_weeks" class="main_item_input">
+                        </div>
+                    </div>
                     <div class="main_item">
                         <div class="main_item_title">Łóżka(GHP)</div>
                         <div class="main_item_wrapper">
