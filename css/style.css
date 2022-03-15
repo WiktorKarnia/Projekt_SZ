@@ -21,10 +21,11 @@ body {
     background-color: #5f5f5f
 }
 .nav_about {
+    text-decoration: none;
     position: absolute;
     right: 0;
     margin: 25px 25px 0 0;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     color: #fff;
     transition: .5s all
@@ -68,22 +69,22 @@ body {
     width: 1280px;
     height: 400px;
 	grid-column-start: span 3;
-    background-color: #e9ebed;
+    background-color: #f2f2f2;
     border-radius: 10px;
     border: 2px solid #000
 }
 .main_item {
     width: 400px;
     height: 400px;
-    background-color: #e9ebed;
+    background-color: #cccccc;
     border-radius: 10px;
     border: 2px solid #000
 }
 .main_item_2, .main_item_3 {
-    background-color: #adb5bd
+    background-color: #7f7f7f
 }
 .main_item_4, .main_item_5, .main_item_6 {
-    background-color: #5f6974
+    background-color: #595959
 }
 .delivery_wrapper {
 	display: grid;
@@ -157,7 +158,7 @@ body {
     padding-right: 25px
 }
 .footer_item {
-    display: flex;
+    display: flex;  
     justify-content: space-between;
     transition: .5s all
 }
@@ -165,6 +166,7 @@ body {
     transform: scale(1.1)
 }
 .footer_descr {
+    text-decoration: none;
     margin-left: 15px;
     color: #fff;
     font-size: 20px
@@ -224,6 +226,6 @@ body {
 	padding: 30px;
 	border: 2px solid black;
 	border-radius: 25px;
-	margin-left: 25%;
-	margin-right: 25%
+	margin: 0 auto;
+    width: 1200px
 }
