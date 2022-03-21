@@ -5,25 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project ERP</title>
-
-    <!-- IMPORT FONT -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
-    </style>
-
-    <!-- IMPORT STYLES -->
+    <!-- IMPORT STYLES AND SCRIPTS-->
     <link rel="stylesheet" href="css/style.css">
-    <script>
-      function show()
-      {
-        document.getElementById("tables").style.display="block"; 
-      }
-  </script>
+    <script src="js/script.js"></script>      
 </head>
 <body>
     <section class="nav">
         <a href="#footer" class="nav_about">About Us</a>
-        <img src="img/logo.png" alt="logo" class="logo">
+        <a href="https://v-ie.uek.krakow.pl/~s215117/Projekt_SZ/index.html"><img src="img/logo.png" alt="logo" class="logo"></a>
     </section>
 
     <section class="main">
@@ -66,16 +55,16 @@
                         <div class="main_item_title">Łóżka(GHP)</div>
                         <div class="main_item_wrapper">
                             <label for="lead_time" class="main_item_descr">Czas realizacji:</label>
-                            <input type="number" min="1" id="lead_time" name="lead_time" class="main_item_input">
+                            <input type="number" min="1" id="lead_time_ghp" name="lead_time_ghp" class="main_item_input">
 
                             <label for="in_stock" class="main_item_descr">Na stanie:</label>
-                            <input type="number" min="1" id="in_stock" name="in_stock" class="main_item_input">
+                            <input type="number" min="1" id="in_stock_ghp" name="in_stock_ghp" class="main_item_input">
 
                             <label for="expected_demand_week" class="main_item_descr">Przew. popyt w danym tyg:</label>
-                            <input type="number" min="1" id="expected_demand_week" name="expected_demand_week" class="main_item_input">
+                            <input type="number" min="1" id="expected_demand_week_ghp" name="expected_demand_week_ghp" class="main_item_input">
 
                             <label for="number_weeks" class="main_item_descr">Liczba tygodni:</label>
-                            <input type="number" min="1" id="number_weeks" name="number_weeks" class="main_item_input">
+                            <input type="number" min="1" id="number_weeks_ghp" name="number_weeks_ghp" class="main_item_input">
                         </div>
                     </div>
                     <div class="main_item main_item_2">
@@ -83,7 +72,7 @@
                         <div class="main_item_wrapper main_item_wrapper_v2">
 
                             <label for="lead_time_mattress" class="main_item_descr">Czas realizacji:</label>
-                            <input type="number" min="1" id="lead_time_mattress" name="lead_time_mattress" class="main_item_input">
+                            <input type="number" min="1" id="lead_time_matt" name="lead_time_matt" class="main_item_input">
 
                             <label for="lot_size_matt" class="main_item_descr">Wielkość partii:</label>
                             <input type="number" min="1" id="lot_size_matt" name="lot_size_matt" class="main_item_input">
@@ -227,7 +216,7 @@
                 <td class="ghp-0pky"></td>
               </tr>
               <tr>
-                <td class="ghp-0pky">Czas realizacji = <br>Na stanie = </td>
+                <td class="ghp-0pky"><p id="tab_lead_time_ghp"></p><p id="tab_in_stock_ghp"></p></td>
                 <td class="ghp-zv4m"></td>
                 <td class="ghp-zv4m"></td>
                 <td class="ghp-zv4m"></td>
