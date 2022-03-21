@@ -1,13 +1,13 @@
 function show(){
     document.getElementById("tables").style.display="block";
-    GHP_Map();
     MRP_Mapper("lead_time_matt","lot_size_matt","in_stock_matt");
     MRP_Mapper("lead_time_frame","lot_size_frame","in_stock_frame");
     MRP_Mapper("lead_time_boards","lot_size_boards","in_stock_boards");
     MRP_Mapper("lead_time_legs","lot_size_legs","in_stock_legs");
     MRP_Mapper("lead_time_racks","lot_size_racks","in_stock_racks");
-
+    MRP_test();
     /*
+    GHP_Map();
     MRP_Materace_Map();
     MRP_Rama_Map();
     MRP_Deski_Map();
@@ -90,3 +90,13 @@ function MRP_Mapper(id1, id2, id3) {
     ])
     console.log(Mapp.get("czas_realizacji")+" "+Mapp.get("wielkosc_partii")+" "+Mapp.get("na_stanie"));
 }*/
+function MRP_test() {
+    var table=document.getElementById("mattres_table");
+    for (var r = 1, row; row = table.rows[r]; r++) {
+        if(r<7){
+            for (var c = 1, cell; cell = row.cells[c]; c++) {
+                cell.innerHTML='2'
+            }
+        }  
+     }
+}
