@@ -14,7 +14,7 @@ function show(){
     MRP_Nogi_Map();
     MRP_Stelaze_Map();*/
 }
-
+/*
 function GHP_Map() {
     const ghp = new Map ([
         ["czas_realizacji", document.getElementById("lead_time_ghp").value],
@@ -24,7 +24,7 @@ function GHP_Map() {
     ])
     document.getElementById("tab_lead_time_ghp").innerHTML = "Czas realizacji = " + parseInt(ghp.get("czas_realizacji"));
     document.getElementById("tab_in_stock_ghp").innerHTML = "Na stanie = " + parseInt(ghp.get("na_stanie"));
-}
+}*/
 
 function MRP_Mapper(id1, id2, id3) {
     const Mapp = new Map ([
