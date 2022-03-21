@@ -91,12 +91,22 @@ function MRP_Mapper(id1, id2, id3) {
     console.log(Mapp.get("czas_realizacji")+" "+Mapp.get("wielkosc_partii")+" "+Mapp.get("na_stanie"));
 }*/
 function MRP_test() {
-    var table=document.getElementById("mattres_table");
+    var table=document.getElementById("ghp_table");
+    var val = []
     for (var r = 1, row; row = table.rows[r]; r++) {
-        if(r<7){
+        if(r<2){
             for (var c = 1, cell; cell = row.cells[c]; c++) {
-                cell.innerHTML='2'
+                val.push(document.getElementById("test"+c).value)
             }
-        }  
-     }
+        }
+    }
+    console.log(val)
+    var arrayLength = val.length;
+    for (var i = 0; i < arrayLength; i++) {
+        if(val[i] != ''){
+            console.log(val.indexOf(val[i])+1);
+        }
+    }
 }
+
+
