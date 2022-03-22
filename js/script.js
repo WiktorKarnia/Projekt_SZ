@@ -1,4 +1,5 @@
 function show(){
+    //document.location.reload();
     document.getElementById("tables").style.display="block";
     MRP_Mapper("lead_time_matt","lot_size_matt","in_stock_matt");
     MRP_Mapper("lead_time_frame","lot_size_frame","in_stock_frame");

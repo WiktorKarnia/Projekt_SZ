@@ -88,10 +88,11 @@ body {
 .main_item {
     width: 400px;
     height: 400px;
-    background-color: #cccccc;
+    background-color: #cccc;
     border-radius: 10px;
     border: 2px solid #000;
     margin-top:90px;
+    text-align: center;
 }
 .main_item_2, .main_item_3 {
     background-color: #7f7f7f
@@ -269,4 +270,13 @@ body {
     width:50px; 
     height:50px; 
     margin:0px;
+}
+.arrow_img {
+    max-width: 150px;
+    max-height: 150px;
+    padding: 15px;
+    font-family: "Lexend", sans-serif;
+}
+input {
+    border-color: black;
 }
