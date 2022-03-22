@@ -33,7 +33,7 @@ function MRP_Mapper(id1, id2, id3) {
         ["wielkosc_partii", document.getElementById(id2).value],
         ["na_stanie", document.getElementById(id3).value]
     ])
-    console.log(Mapp.get("czas_realizacji")+" "+Mapp.get("wielkosc_partii")+" "+Mapp.get("na_stanie"));
+    console.log("Czas realizacji: " + Mapp.get("czas_realizacji") +" "+ "Wielkosc partii: " + Mapp.get("wielkosc_partii") +" "+"Na stanie: "+ Mapp.get("na_stanie"));
 }
 
 /*
@@ -101,11 +101,11 @@ function MRP_test() {
             }
         }
     }
-    console.log(val)
+    //console.log(val)
     var arrayLength = val.length;
     for (var i = 0; i < arrayLength; i++) {
         if(val[i] != ''){
-            console.log(val.indexOf(val[i])+1);
+            console.log("W okresie " + (val.indexOf(val[i])+1) + " należy wyprodukować " + val[i] + " łóżek");
         }
     }
 }
