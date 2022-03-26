@@ -88,17 +88,17 @@ body {
 .main_item {
     width: 400px;
     height: 400px;
-    background-color: #cccc;
+    background-color: rgba(228, 228, 228, 0.8);
     border-radius: 10px;
     border: 2px solid #000;
     margin-top:90px;
     text-align: center;
 }
 .main_item_2, .main_item_3 {
-    background-color: #7f7f7f
+    background-color: #b6b6b6
 }
 .main_item_4, .main_item_5, .main_item_6 {
-    background-color: #595959
+    background-color: #858585
 }
 .delivery_wrapper {
 	display: grid;
