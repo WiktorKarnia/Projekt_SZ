@@ -101,7 +101,7 @@ function MRP_test() {
             }
         }
     }
-    //console.log(val)
+    console.log(val)
     var arrayLength = val.length;
     for (var i = 0; i < arrayLength; i++) {
         if(val[i] != ''){
