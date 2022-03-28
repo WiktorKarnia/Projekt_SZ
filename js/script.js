@@ -6,7 +6,8 @@ function show(){
     MRP_Mapper("lead_time_boards","lot_size_boards","in_stock_boards");
     MRP_Mapper("lead_time_legs","lot_size_legs","in_stock_legs");
     MRP_Mapper("lead_time_racks","lot_size_racks","in_stock_racks");
-    MRP_test();
+    GHP_iterate();
+    GHP_available();
     /*
     GHP_Map();
     MRP_Materace_Map();
@@ -91,23 +92,39 @@ function MRP_Mapper(id1, id2, id3) {
     ])
     console.log(Mapp.get("czas_realizacji")+" "+Mapp.get("wielkosc_partii")+" "+Mapp.get("na_stanie"));
 }*/
-function MRP_test() {
+function GHP_iterate() {
     var table=document.getElementById("ghp_table");
-    var val = []
+    var val = [];
+    var count = 0;
     for (var r = 1, row; row = table.rows[r]; r++) {
-        if(r<2){
+        if(r<3){
             for (var c = 1, cell; cell = row.cells[c]; c++) {
-                val.push(document.getElementById("test"+c).value)
+                console.log(count++)
+                val.push(document.getElementById("test"+ count).value)
+                console.log(document.getElementById("test"+ count).value)
             }
-        }
+        }  
     }
+
     console.log(val)
-    var arrayLength = val.length;
+
+
+
+    //console.log(val_arr)
+    /*var arrayLength = val.length;
     for (var i = 0; i < arrayLength; i++) {
         if(val[i] != ''){
             console.log("W okresie " + (val.indexOf(val[i])+1) + " należy wyprodukować " + val[i] + " łóżek");
         }
-    }
+    }*/
 }
-
+function GHP_available() {
+    var table=document.getElementById("ghp_table");
+    for (var r = 3, row; row = table.rows[r];) {
+            for (var c = 1, cell; cell = row.cells[c]; c++) {
+                cell.innerHTML='2'
+            }
+        }  
+     }
+}
 
