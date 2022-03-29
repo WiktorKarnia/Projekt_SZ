@@ -128,7 +128,7 @@ function GHP_iterate() {
 const input = document.getElementById("in_stock");
 //console.log(document.getElementById("in_stock").value);
 
-input.addEventListener('change', GHP_available);
+input.addEventListener('input', GHP_available);
 
 
 function GHP_available(e) {
