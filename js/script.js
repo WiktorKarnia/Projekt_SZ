@@ -1,13 +1,13 @@
 function show(){
     //document.location.reload();
     document.getElementById("tables").style.display="block";
-    MRP_Mapper("lead_time_matt","lot_size_matt","in_stock_matt");
-    MRP_Mapper("lead_time_frame","lot_size_frame","in_stock_frame");
-    MRP_Mapper("lead_time_boards","lot_size_boards","in_stock_boards");
-    MRP_Mapper("lead_time_legs","lot_size_legs","in_stock_legs");
-    MRP_Mapper("lead_time_racks","lot_size_racks","in_stock_racks");
-    GHP_iterate();
-    GHP_available();
+    //MRP_Mapper("lead_time_matt","lot_size_matt","in_stock_matt");
+    //MRP_Mapper("lead_time_frame","lot_size_frame","in_stock_frame");
+    //MRP_Mapper("lead_time_boards","lot_size_boards","in_stock_boards");
+    //MRP_Mapper("lead_time_legs","lot_size_legs","in_stock_legs");
+    //MRP_Mapper("lead_time_racks","lot_size_racks","in_stock_racks");
+    //GHP_iterate();
+    //GHP_available();
     /*
     GHP_Map();
     MRP_Materace_Map();
@@ -26,7 +26,7 @@ function GHP_Map() {
     ])
     document.getElementById("tab_lead_time_ghp").innerHTML = "Czas realizacji = " + parseInt(ghp.get("czas_realizacji"));
     document.getElementById("tab_in_stock_ghp").innerHTML = "Na stanie = " + parseInt(ghp.get("na_stanie"));
-}*/
+}
 
 function MRP_Mapper(id1, id2, id3) {
     const Mapp = new Map ([
@@ -36,7 +36,7 @@ function MRP_Mapper(id1, id2, id3) {
     ])
     console.log("Czas realizacji: " + Mapp.get("czas_realizacji") +" "+ "Wielkosc partii: " + Mapp.get("wielkosc_partii") +" "+"Na stanie: "+ Mapp.get("na_stanie"));
 }
-
+*/
 /*
 function MRP_Materace_Map() {
     const mrp_Materace = new Map ([
@@ -92,21 +92,28 @@ function MRP_Mapper(id1, id2, id3) {
     ])
     console.log(Mapp.get("czas_realizacji")+" "+Mapp.get("wielkosc_partii")+" "+Mapp.get("na_stanie"));
 }*/
+var demand_val;
+var production_val;
+var val;
+
 function GHP_iterate() {
     var table=document.getElementById("ghp_table");
-    var val = [];
+    val = [];
     var count = 0;
     for (var r = 1, row; row = table.rows[r]; r++) {
         if(r<3){
             for (var c = 1, cell; cell = row.cells[c]; c++) {
-                console.log(count++)
+                count++
                 val.push(document.getElementById("test"+ count).value)
-                console.log(document.getElementById("test"+ count).value)
+                //console.log(document.getElementById("test"+ count).value)
             }
         }  
     }
-
-    console.log(val)
+    var half = Math.ceil(val.length / 2); 
+    demand_val = val.slice(0,half);
+    production_val = val.slice(-half);
+    console.log(demand_val);
+    console.log(production_val);
 
 
 
@@ -118,13 +125,52 @@ function GHP_iterate() {
         }
     }*/
 }
-function GHP_available() {
+const input = document.getElementById("in_stock");
+//console.log(document.getElementById("in_stock").value);
+
+input.addEventListener('change', GHP_available);
+
+
+function GHP_available(e) {
+    GHP_iterate();
+    var count = 20;
+    /*
+    var arrLength = 10;
+    for (var i = 0; i < arrLength; i++){
+        console.log(demand_val[i]);
+        console.log(production_val[i])
+    }
+    */
+    var stock = e.target.value;
     var table=document.getElementById("ghp_table");
     for (var r = 3, row; row = table.rows[r];) {
             for (var c = 1, cell; cell = row.cells[c]; c++) {
-                cell.innerHTML='2'
+                while (count <= 30){
+                    count++
+                    console.log(demand_val[count-21]);
+                    console.log(production_val[count-21])
+                    //document.getElementById("test"+ count).value = stock;
+                    
+                    if(demand_val[count-21]>0 && production_val[count-21]==0){
+                        stock = parseInt(stock) - parseInt(demand_val[count-21]);
+                        document.getElementById("test"+ count).value = stock;
+                    }
+                    else if(demand_val[count-21]==0 && production_val[count-21]>0){
+                        stock = parseInt(stock) + parseInt(production_val[count-21]);
+                        document.getElementById("test"+ count).value = stock;
+                    }
+                    else if(demand_val[count-21]>0 && production_val[count-21]>0){
+                        stock = (parseInt(stock) + parseInt(production_val[count-21])) - parseInt(demand_val[count-21]);
+                        document.getElementById("test"+ count).value = stock;
+                    }
+                    else{
+                        document.getElementById("test"+ count).value = stock;
+                    }
+                }    
             }
-        }  
-     }
+        }
+    }
+    
+
 
 
