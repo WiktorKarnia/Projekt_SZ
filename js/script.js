@@ -6,8 +6,14 @@ window.addEventListener("keyup", function(event) {
     }
 });
 */
+function scroll(element_id){
+    var element = document.getElementById(element_id);
+    element.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+}
+
 function show(){
     document.getElementById("tables").style.display="block";
+
     /*
     MRP_Mapper("lead_time_matt","lot_size_matt","in_stock_matt");
     MRP_Mapper("lead_time_frame","lot_size_frame","in_stock_frame");
@@ -22,6 +28,12 @@ function show(){
     MRP_Deski_Map();
     MRP_Nogi_Map();
     MRP_Stelaze_Map();
+
+    scroll("mattres_table");
+    /*
+    var element = document.getElementById("mattres_table");
+    element.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+    */
 }
 
 /*
