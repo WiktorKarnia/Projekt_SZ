@@ -165,7 +165,7 @@ function GHP_available(e) {
         console.log(production_val[i])
     }
     */
-    var stock = e.target.value;
+    var stock = input.value
     var table=document.getElementById("ghp_table");
     var available_arr = [];
     for (var r = 3, row; row = table.rows[r];) {
