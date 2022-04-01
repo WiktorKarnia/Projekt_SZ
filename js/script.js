@@ -33,6 +33,7 @@ function show(){
     MRP_Deski_Map();
     MRP_Nogi_Map();
     MRP_Stelaze_Map();
+    MRP_Ramy_Materace()
 
     scroll("mattres_table");
     /*
@@ -135,8 +136,8 @@ function GHP_iterate() {
     var half = Math.ceil(val.length / 2); 
     demand_val = val.slice(0,half);
     production_val = val.slice(-half);
-    console.log(demand_val);
-    console.log(production_val);
+    //console.log(demand_val);
+    //console.log(production_val);
 
 
 
@@ -153,6 +154,7 @@ const input = document.getElementById("in_stock");
 
 input.addEventListener('input', GHP_available);
 
+var available_arr;
 
 function GHP_available(e) {
     GHP_iterate();
@@ -167,13 +169,13 @@ function GHP_available(e) {
     */
     var stock = input.value
     var table=document.getElementById("ghp_table");
-    var available_arr = [];
+    available_arr = [];
     for (var r = 3, row; row = table.rows[r];) {
             for (var c = 1, cell; cell = row.cells[c]; c++) {
                 while (count <= 30){
                     count++
-                    console.log(demand_val[count-21]);
-                    console.log(production_val[count-21]);
+                    //console.log(demand_val[count-21]);
+                    //console.log(production_val[count-21]);
                     //document.getElementById("test"+ count).value = stock;
                     
                     if(demand_val[count-21]>0 && production_val[count-21]==0){
@@ -223,18 +225,26 @@ function GHP_available(e) {
                             break;
                         }
                         */
+                    
                     }
                 }
             }
-        }
+        } 
     }
 
-
-/*    
-function MRP_Ramy_Materace() {
-
+function check_values(){
+    show();
+    /*
+    if(available_arr.every(v => v >= 0)){
+        show();
+    }
+    else{
+        alert("Proszę sprawdzić czy wszystkie wartości są odpowiednio podane!")
+    }
+    */
 }
-*/   
+
+
 
 
 

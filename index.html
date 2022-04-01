@@ -46,7 +46,7 @@
                                 <tbody>
                                   <tr>
                                     <td class="ghp-0pky">Przewidywany popyt</td>
-                                    <td class="ghp-0pky"><input type="number" min="0" class="table_input" id="test1" onkeypress="GHP_available()"></td>
+                                    <td class="ghp-0pky"><input type="number" min="0" class="table_input" id="test1"></td>
                                     <td class="ghp-0pky"><input type="number" min="0" class="table_input" id="test2"></td>
                                     <td class="ghp-0pky"><input type="number" min="0" class="table_input" id="test3"></td>
                                     <td class="ghp-0pky"><input type="number" min="0" class="table_input" id="test4"></td>
@@ -168,7 +168,7 @@
                         <div class="main_item_wrapper main_item_wrapper_v2">
                             
                             <label for="lead_time_frame" class="main_item_descr" style="font-size: 30px;">Czas realizacji:</label>
-                            <input type="number" min="1" id="lead_time_frame" name="lead_time_frame" class="main_item_input" value="2">
+                            <input type="number" min="1" id="lead_time_frame" name="lead_time_frame" class="main_item_input" value="1">
 
                             <label for="lot_size_frame" class="main_item_descr" style="font-size: 30px;">Wielkość partii:</label>
                             <input type="number" min="1" id="lot_size_frame" name="lot_size_frame" class="main_item_input" value="5">
@@ -229,10 +229,14 @@
                     <input type="submit" class="submit_button" value="Submit" onclick="show()">
                 </div>-->
                 <div class="container_button">
-                    <input type="button" class="submit_button" id="subb" value="Potwierdź" onclick="show()">
+                    <input type="button" class="submit_button" id="subb" value="Potwierdź" onclick="check_values()">
                 </div>
 
             </form>
+        </div>
+        <div id="thank_you" style="display: none;">
+          <p>Thanks for filling up the form!</p>
+          <button type="submit">Close</button>
         </div>
     </section>
 
@@ -261,16 +265,16 @@
                 <tbody>
                   <tr>
                     <td class="mrp-m-0pky">Całkowite zapotrzebowanie</td>
-                    <td class="mrp-m-0pky"></td>
-                    <td class="mrp-m-0pky"></td>
-                    <td class="mrp-m-0pky"></td>
-                    <td class="mrp-m-0pky"></td>
-                    <td class="mrp-m-0pky"></td>
-                    <td class="mrp-m-0pky"></td>
-                    <td class="mrp-m-0pky"></td>
-                    <td class="mrp-m-0pky"></td>
-                    <td class="mrp-m-0pky"></td>
-                    <td class="mrp-m-0pky"></td>
+                    <td class="mrp-m-0pky"id="test1"></td>
+                    <td class="mrp-m-0pky"id="test2"></td>
+                    <td class="mrp-m-0pky"id="test3"></td>
+                    <td class="mrp-m-0pky"id="test4"></td>
+                    <td class="mrp-m-0pky"id="test5"></td>
+                    <td class="mrp-m-0pky"id="test6"></td>
+                    <td class="mrp-m-0pky"id="test7"></td>
+                    <td class="mrp-m-0pky"id="test8"></td>
+                    <td class="mrp-m-0pky"id="test9"></td>
+                    <td class="mrp-m-0pky"id="test10"></td>
                   </tr>
                   <tr>
                     <td class="mrp-m-0pky">Planowane przyjęcia</td>
@@ -836,8 +840,8 @@
             </div>
         </div>
     </footer>
-
     <script src="js/script.js"></script>    
+    <script src="js/mrp.js"></script>
 </body>
 </html>
 
