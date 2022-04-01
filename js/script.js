@@ -6,6 +6,11 @@ window.addEventListener("keyup", function(event) {
     }
 });
 */
+function cellListeners(){
+    document.querySelectorAll("#ghp_table td")
+    .forEach(e => e.addEventListener("input", ghp_available));
+}
+
 function scroll(element_id){
     var element = document.getElementById(element_id);
     element.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
@@ -151,6 +156,7 @@ input.addEventListener('input', GHP_available);
 
 function GHP_available(e) {
     GHP_iterate();
+    
     var count = 20;
     /*
     var arrLength = 10;
