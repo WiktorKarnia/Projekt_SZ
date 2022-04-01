@@ -233,15 +233,15 @@ function GHP_available(e) {
     }
 
 function check_values(){
-    show();
-    /*
+    //show();
+    
     if(available_arr.every(v => v >= 0)){
         show();
     }
     else{
         alert("Proszę sprawdzić czy wszystkie wartości są odpowiednio podane!")
     }
-    */
+    
 }
 
 
