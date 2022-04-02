@@ -165,7 +165,7 @@ function MRP_Ramy_Materace() {
         if(production_val[i] != ''){
             console.log(production_val[i]);
             console.log("index rama: " + ((parseInt(i)+1)-parseInt(document.getElementById("lead_time_legs").value)));
-            var value = parseInt(production_val[i]);
+            var value = parseInt(production_val[i])*4;
             var cellIndex = (((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value))-parseInt(document.getElementById("lead_time_legs").value));
             var rowIndex = 1;
             document.getElementById('legs_table').rows[rowIndex].cells[cellIndex].innerHTML = value;
