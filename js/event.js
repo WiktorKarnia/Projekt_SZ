@@ -27,6 +27,7 @@ function test_listeners(){
 }
 
 function clear_ghp_table() {
+    document.getElementById("tables").style.display="none";
     var table=document.getElementById("ghp_table");
     val = [];
     var count = 0;
