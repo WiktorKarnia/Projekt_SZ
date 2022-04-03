@@ -57,7 +57,7 @@ function MRP_Ramy_Materace() {
 
                     var cellIndex = (parseInt(c));
                     var rowIndex = 4;
-                    document.getElementById('mattres_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_matt").value));
+                    document.getElementById('mattres_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_matt").value)*lot_count);
 
                     var cellIndex = ((parseInt(c))-parseInt(document.getElementById("lead_time_matt").value));
                     var rowIndex = 5;
@@ -129,7 +129,7 @@ function MRP_Ramy_Materace() {
                     
                     var cellIndex = (parseInt(c));
                     var rowIndex = 4;
-                    document.getElementById('frame_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_frame").value));
+                    document.getElementById('frame_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_frame").value)*lot_count);
 
                     var cellIndex = ((parseInt(c))-parseInt(document.getElementById("lead_time_frame").value));
                     var rowIndex = 5;
@@ -207,7 +207,7 @@ function MRP_Ramy_Materace() {
 
                     var cellIndex = (parseInt(c));
                     var rowIndex = 4;
-                    document.getElementById('planks_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_boards").value));
+                    document.getElementById('planks_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_boards").value)*lot_count);
 
                     var cellIndex = ((parseInt(c))-parseInt(document.getElementById("lead_time_boards").value));
                     var rowIndex = 5;
@@ -280,7 +280,7 @@ function MRP_Ramy_Materace() {
 
                     var cellIndex = (parseInt(c));
                     var rowIndex = 4;
-                    document.getElementById('legs_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_legs").value));
+                    document.getElementById('legs_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_legs").value)*lot_count);
 
                     var cellIndex = ((parseInt(c))-parseInt(document.getElementById("lead_time_legs").value));
                     var rowIndex = 5;
@@ -351,7 +351,7 @@ function MRP_Ramy_Materace() {
 
                     var cellIndex = (parseInt(c));
                     var rowIndex = 4;
-                    document.getElementById('stelaz_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_racks").value));
+                    document.getElementById('stelaz_table').rows[rowIndex].cells[cellIndex].innerHTML = Math.abs(in_stock - parseInt(document.getElementById("lot_size_racks").value)*lot_count);
 
                     var cellIndex = ((parseInt(c))-parseInt(document.getElementById("lead_time_racks").value));
                     var rowIndex = 5;
