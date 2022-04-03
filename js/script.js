@@ -235,10 +235,26 @@ function GHP_available(e) {
         } 
     }
 
+function clear_mrp_tables() {
+    var tables = ["mattres_table", "frame_table", "planks_table", "legs_table", "stelaz_table"]
+    var arrayLength = tables.length;
+    for (var i = 0; i < arrayLength; i++) {
+        var table=document.getElementById(tables[i]);
+        for (var r = 1, row; row = table.rows[r]; r++) {
+            if (r < 7) {
+                for (var c = 1, cell; cell = row.cells[c]; c++) {
+                    cell.innerHTML = '';
+                }
+            }
+        }
+    }
+}
+
 function check_values(){
     //show();
     
     if(available_arr.every(v => v >= 0)){
+        clear_mrp_tables()
         MRP_Ramy_Materace();
         check_values_mrp();
         //check_check();
