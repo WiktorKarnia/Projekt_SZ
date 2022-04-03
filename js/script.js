@@ -34,6 +34,7 @@ function show(){
     MRP_Nogi_Map();
     MRP_Stelaze_Map();
     MRP_Ramy_Materace();
+    GHP_events_MRP()
 
     scroll("mattres_table");
     /*
