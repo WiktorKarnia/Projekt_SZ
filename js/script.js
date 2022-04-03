@@ -128,7 +128,9 @@ function GHP_iterate() {
         if(r<3){
             for (var c = 1, cell; cell = row.cells[c]; c++) {
                 count++
+                
                 val.push(document.getElementById("test"+ count).value)
+
                 //console.log(document.getElementById("test"+ count).value)
             }
         }  
