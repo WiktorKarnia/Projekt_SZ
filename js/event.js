@@ -27,7 +27,7 @@ function test_listeners(){
 }
 
 function clear_ghp_table() {
-    document.getElementById("tables").style.display="none";
+    //document.getElementById("tables").style.display="none";
     var table=document.getElementById("ghp_table");
     val = [];
     var count = 0;
@@ -41,3 +41,6 @@ function clear_ghp_table() {
     }
     scroll("ghp_table");
 }
+
+
+//if r<7 i innerHTML

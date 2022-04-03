@@ -33,6 +33,7 @@ function show(){
     MRP_Deski_Map();
     MRP_Nogi_Map();
     MRP_Stelaze_Map();
+    clear_mrp_tables()
     MRP_Ramy_Materace();
     GHP_events_MRP();
 
@@ -245,6 +246,21 @@ function check_values(){
         alert("Proszę sprawdzić czy wszystkie wartości są odpowiednio podane!")
     }
     
+}
+
+function clear_mrp_tables() {
+    var tables = ["mattres_table", "frame_table", "planks_table", "legs_table", "stelaz_table"]
+    var arrayLength = tables.length;
+    for (var i = 0; i < arrayLength; i++) {
+        var table=document.getElementById(tables[i]);
+        for (var r = 1, row; row = table.rows[r]; r++) {
+            if (r < 7) {
+                for (var c = 1, cell; cell = row.cells[c]; c++) {
+                    cell.innerHTML = '';
+                }
+            }
+        }
+    }
 }
 
 
