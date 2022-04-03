@@ -91,7 +91,7 @@ body {
     background-color: rgba(228, 228, 228, 0.8);
     border-radius: 10px;
     border: 2px solid #000;
-    margin-top:90px;
+    margin-top:130px;
     text-align: center;
 }
 .main_item_2, .main_item_3 {
@@ -144,14 +144,15 @@ body {
     height: 75px;
     background: #7bc782;
     border-radius: 20px;
-    margin-top: 50px;
-    margin-bottom: 100px;
+    margin-top: 100px;
+    margin-bottom: 50px;
     font-size: 30px;
     font-weight: 700;
-    transition: .5s all
+    transition: .5s all;
+    cursor: pointer;
 }
 .submit_button:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
     background: #17ac26;
     border: 2px solid #000
 }
@@ -290,16 +291,20 @@ input {
     margin:0px;
 }
 .clear_button {
-    width: 190px;
-    height: 55px;
-    background: #8d8d8d;
+    width: 200px;
+    height: 60px;
+    background: #a0a0a0;
     border-radius: 20px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    font-size: 23px;
-    font-weight: 700;
+    margin:30px;
+    font-size: 20px;
+    font-weight: 600;
+    border-style: solid;
+    border-color: black;
+    transition: .5s all;
 }
 
 .clear_button:hover {
-    background: #f3f3f3;
+    background: #c7c7c7;
+    cursor: pointer;
+    transform: scale(1.05);
 }

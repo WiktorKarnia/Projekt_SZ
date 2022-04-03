@@ -25,6 +25,7 @@ function GHP_events_MRP() {
 function test_listeners(){
     console.log("test")
 }
+
 function clear_ghp_table() {
     var table=document.getElementById("ghp_table");
     val = [];
