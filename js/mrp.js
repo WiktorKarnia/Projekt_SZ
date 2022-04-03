@@ -5,13 +5,13 @@
 
 function MRP_Ramy_Materace() {
 
-    console.log(production_val);
+    //console.log(production_val);
     var table=document.getElementById("mattres_table");
     var arrLength = 10;
     for (var i = 0; i < arrLength; i++){
         if(production_val[i] != ''){
-            console.log(production_val[i]);
-            console.log("index materac: " + ((parseInt(i)+1)-parseInt(document.getElementById("lead_time").value)));
+            //console.log(production_val[i]);
+            //console.log("index materac: " + ((parseInt(i)+1)-parseInt(document.getElementById("lead_time").value)));
             var value = parseInt(production_val[i]);
             var cellIndex = ((parseInt(i)+1)-parseInt(document.getElementById("lead_time").value));
             var rowIndex = 1;
@@ -23,7 +23,7 @@ function MRP_Ramy_Materace() {
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         neded.push(cell.innerHTML);
     }
-    console.log(neded);
+    //console.log(neded);
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_matt").value);
     for (var c = 1, cell; cell = row.cells[c]; c++) {
@@ -80,8 +80,8 @@ function MRP_Ramy_Materace() {
     var arrLength = 10;
     for (var i = 0; i < arrLength; i++){
         if(production_val[i] != ''){
-            console.log(production_val[i]);
-            console.log("index rama: " + ((parseInt(i)+1)-parseInt(document.getElementById("lead_time").value)));
+            //console.log(production_val[i]);
+            //console.log("index rama: " + ((parseInt(i)+1)-parseInt(document.getElementById("lead_time").value)));
             var value = parseInt(production_val[i]);
             var cellIndex = ((parseInt(i)+1)-parseInt(document.getElementById("lead_time").value));
             var rowIndex = 1;
@@ -93,7 +93,7 @@ function MRP_Ramy_Materace() {
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         neded.push(cell.innerHTML);
     }
-    console.log(neded);
+    //console.log(neded);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_frame").value);
@@ -158,8 +158,8 @@ function MRP_Ramy_Materace() {
     var arrLength = 10;
     for (var i = 0; i < arrLength; i++){
         if(order[i] != ''){
-            console.log(order[i]);
-            console.log("index deski: " + (((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value))));
+            //console.log(order[i]);
+            //console.log("index deski: " + (((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value))));
             var value = parseInt(order[i])*4;
             var cellIndex = (((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value)));
             var rowIndex = 1;
@@ -171,7 +171,7 @@ function MRP_Ramy_Materace() {
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         neded.push(cell.innerHTML);
     }
-    console.log(neded);
+    //console.log(neded);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_boards").value);
@@ -230,8 +230,8 @@ function MRP_Ramy_Materace() {
     var arrLength = 10;
     for (var i = 0; i < arrLength; i++){
         if(order[i] != ''){
-            console.log(order[i]);
-            console.log("index rama: " + ((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value)));
+            //console.log(order[i]);
+            //console.log("index rama: " + ((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value)));
             var value = parseInt(order[i])*4;
             var cellIndex = (((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value)));
             var rowIndex = 1;
@@ -244,7 +244,7 @@ function MRP_Ramy_Materace() {
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         neded.push(cell.innerHTML);
     }
-    console.log(neded);
+    //console.log(neded);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_legs").value);
@@ -302,8 +302,8 @@ function MRP_Ramy_Materace() {
     var arrLength = 10;
     for (var i = 0; i < arrLength; i++){
         if(order[i] != ''){
-            console.log(order[i]);
-            console.log("index rama: " + ((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value)));
+            //console.log(order[i]);
+            //console.log("index rama: " + ((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value)));
             var value = parseInt(order[i]);
             var cellIndex = (((parseInt(i)+1)-parseInt(document.getElementById("lead_time_frame").value)));
             var rowIndex = 1;
@@ -315,7 +315,7 @@ function MRP_Ramy_Materace() {
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         neded.push(cell.innerHTML);
     }
-    console.log(neded);
+    //console.log(neded);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_racks").value);

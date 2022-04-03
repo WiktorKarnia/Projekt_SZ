@@ -33,7 +33,7 @@ function show(){
     MRP_Deski_Map();
     MRP_Nogi_Map();
     MRP_Stelaze_Map();
-    MRP_Ramy_Materace()
+    MRP_Ramy_Materace();
 
     scroll("mattres_table");
     /*
