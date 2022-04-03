@@ -33,7 +33,7 @@ function show(){
     MRP_Deski_Map();
     MRP_Nogi_Map();
     MRP_Stelaze_Map();
-    MRP_Ramy_Materace();
+    
     GHP_events_MRP();
 
     scroll("mattres_table");
@@ -239,7 +239,9 @@ function check_values(){
     //show();
     
     if(available_arr.every(v => v >= 0)){
-        show();
+        MRP_Ramy_Materace();
+        check_values_mrp();
+        //check_check();
     }
     else{
         alert("Proszę sprawdzić czy wszystkie wartości są odpowiednio podane!")

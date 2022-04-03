@@ -369,3 +369,61 @@ function MRP_Ramy_Materace() {
         }
     }      
 }
+
+function check_values_mrp(){
+    var tables = ["mattres_table", "frame_table", "planks_table", "legs_table", "stelaz_table"]
+    var mattres_table_lead = document.getElementById("lead_time_matt").value;
+    var frame_table_lead = document.getElementById("lead_time_frame").value;
+    var planks_table_lead = document.getElementById("lead_time_boards").value;
+    var legs_table_lead = document.getElementById("lead_time_legs").value;
+    var stelaz_table_lead = document.getElementById("lead_time_racks").value;
+    var arrayLength = tables.length;
+    var results = [];
+    for (var i = 0; i < arrayLength; i++) {
+        var table=document.getElementById(tables[i]);
+        
+        for (var r = 1, row; row = table.rows[r]; r++) {
+            if(r<2){
+                var cell = row.cells[0];
+                results.push(isNaN(cell.innerHTML));
+                //console.log(results);
+            }
+        }
+    }
+    if(results.includes(false)){
+        alert("Nie jesteśmy w stanie wyprodukować łóżek tak szybko!");
+    }
+    else{
+        show();
+    }
+    var results2 = [];
+    for (var i = 0; i < arrayLength; i++) {
+        var table=document.getElementById(tables[i]);
+        var buy = [];
+        for (var r = 5, row; row = table.rows[r]; r++) {
+            if(r<6){
+                var cell = row.cells[0];
+                results2.push(isNaN(cell.innerHTML));
+                if(isNaN(cell.innerHTML)==false){
+                    buy.push(cell.innerHTML)
+                    //console.log(document.getElementsByName(tables[i] + "_lead").value);
+                    //console.log(0+parseInt(tables[i] + "_lead"));
+                    //table.rows[2].cells[0+parseInt(document.getElementsByName(tables[i] + "_lead").value)].innerHTML = cell.innerHTML;
+                    cell.innerHTML = 'Planowane zamówiena'
+                }
+                console.log(buy);
+            }
+        }
+    }
+    if(results2.includes(false)){
+        show()
+        //alert("Nie jesteśmy w stanie wyprodukować łóżek tak szybko!");
+    }
+    else{
+        //console.log("tity");
+        show()
+    }
+}
+/*function check_check(){
+    
+}*/
