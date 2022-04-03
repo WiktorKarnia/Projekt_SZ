@@ -25,3 +25,17 @@ function GHP_events_MRP() {
 function test_listeners(){
     console.log("test")
 }
+function clear_ghp_table() {
+    var table=document.getElementById("ghp_table");
+    val = [];
+    var count = 0;
+    for (var r = 1, row; row = table.rows[r]; r++) {
+        if(r<4){
+            for (var c = 1, cell; cell = row.cells[c]; c++) {
+                count++
+                document.getElementById("test"+ count).value = '';
+            }
+        }  
+    }
+    scroll("ghp_table");
+}

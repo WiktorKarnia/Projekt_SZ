@@ -86,7 +86,8 @@
                                   <tr>
                                     <td class="ghp-0pky">
                                       Czas realizacji = <input type="number" min="0" id = "lead_time" class="table_input" value="1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"><br>
-                                      Na stanie = <input type="number" value="10" min="0" id="in_stock" class="table_input" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+                                      Na stanie = <input type="number" value="10" min="0" id="in_stock" class="table_input" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"><br>
+                                      <button id="clear_ghp" class="clear_button" onclick="clear_ghp_table()">Wyczyść wartości</button>
                                     </td>
                                     <td class="ghp-zv4m"></td>
                                     <td class="ghp-zv4m"></td>
