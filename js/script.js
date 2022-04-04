@@ -154,8 +154,10 @@ function GHP_iterate() {
 }
 const input = document.getElementById("in_stock");
 //console.log(document.getElementById("in_stock").value);
+const input2 = document.getElementById("lead_time");
 
 input.addEventListener('input', GHP_available);
+input2.addEventListener('input', GHP_available);
 
 var available_arr;
 
@@ -261,7 +263,7 @@ function check_values(){
     
     if(available_arr.every(v => v >= 0)){
         
-        if(better_of() == true) { //...&....&....
+        if(better_of() == true) { 
             clear_mrp_tables()
             MRP_Ramy_Materace();
             check_values_mrp();
