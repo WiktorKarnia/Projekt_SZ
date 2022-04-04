@@ -407,7 +407,27 @@ function check_values_mrp(){
                 if(isNaN(cell.innerHTML)==false){
                     buy.push(cell.innerHTML)
                     //console.log(document.getElementsByName(tables[i] + "_lead").value);
-                    //console.log(0+parseInt(tables[i] + "_lead"));
+                    //console.log(document.getElementsByClassName("marakuja").value);
+                    if(tables[i]== 'mattres_table'){
+                        console.log(MRP_Materace_Map().get("czas_realizacji")); 
+                        table.rows[2].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                    }
+                    else if(tables[i]== 'frame_table'){
+                        console.log(MRP_Rama_Map().get("czas_realizacji")); 
+                        table.rows[2].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                    }
+                    else if(tables[i]== 'planks_table'){
+                        console.log(MRP_Deski_Map().get("czas_realizacji")); 
+                        table.rows[2].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                    }
+                    else if(tables[i]== 'legs_table'){
+                        console.log(MRP_Nogi_Map().get("czas_realizacji")); 
+                        table.rows[2].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                    }
+                    else{
+                        console.log(MRP_Stelaze_Map().get("czas_realizacji")); 
+                        table.rows[2].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                    }
                     //table.rows[2].cells[0+parseInt(document.getElementsByName(tables[i] + "_lead").value)].innerHTML = cell.innerHTML;
                     cell.innerHTML = 'Planowane zamówiena'
                 }
@@ -424,6 +444,62 @@ function check_values_mrp(){
         show()
     }
 }
+
+function MRP_Materace_Map() {
+    const mrp_Materace = new Map ([
+        ["czas_realizacji", document.getElementById("lead_time_matt").value],
+        ["wielkosc_partii", document.getElementById("lot_size_matt").value],
+        ["na_stanie", document.getElementById("in_stock_matt").value]
+    ])
+    
+    //console.log(mrp_Materace.get("czas_realizacji")+" "+mrp_Materace.get("wielkosc_partii")+" "+mrp_Materace.get("na_stanie"));
+    document.getElementById("matt_bio").innerHTML = "Czas realizacji = " + parseInt(mrp_Materace.get("czas_realizacji")) + "<br>" + "Wielkość partii = " + parseInt(mrp_Materace.get("wielkosc_partii")) + "<br>" + "Poziom BOM = 1" + "<br>" + "Na stanie = " + parseInt(mrp_Materace.get("na_stanie"));
+    return mrp_Materace;
+}
 /*function check_check(){
     
 }*/
+function MRP_Rama_Map() {
+    const mrp_Rama = new Map ([
+        ["czas_realizacji", document.getElementById("lead_time_frame").value],
+        ["wielkosc_partii", document.getElementById("lot_size_frame").value],
+        ["na_stanie", document.getElementById("in_stock_frame").value]
+    ])
+        
+    //console.log(mrp_Rama.get("czas_realizacji")+" "+mrp_Rama.get("wielkosc_partii")+" "+mrp_Rama.get("na_stanie"));
+    document.getElementById("frame_bio").innerHTML = "Czas realizacji = " + parseInt(mrp_Rama.get("czas_realizacji")) + "<br>" + "Wielkość partii = " + parseInt(mrp_Rama.get("wielkosc_partii")) + "<br>" + "Poziom BOM = 1" + "<br>" + "Na stanie = " + parseInt(mrp_Rama.get("na_stanie"));
+    return mrp_Rama;
+}
+
+function MRP_Deski_Map() {
+    const mrp_Deski = new Map ([
+        ["czas_realizacji", document.getElementById("lead_time_boards").value],
+        ["wielkosc_partii", document.getElementById("lot_size_boards").value],
+        ["na_stanie", document.getElementById("in_stock_boards").value]
+    ])
+    //console.log(mrp_Deski.get("czas_realizacji")+" "+mrp_Deski.get("wielkosc_partii")+" "+mrp_Deski.get("na_stanie"));
+    document.getElementById("boards_bio").innerHTML = "Czas realizacji = " + parseInt(mrp_Deski.get("czas_realizacji")) + "<br>" + "Wielkość partii = " + parseInt(mrp_Deski.get("wielkosc_partii")) + "<br>" + "Poziom BOM = 2" + "<br>" + "Na stanie = " + parseInt(mrp_Deski.get("na_stanie"));
+    return mrp_Deski;
+}
+
+function MRP_Nogi_Map() {
+    const mrp_Nogi = new Map ([
+        ["czas_realizacji", document.getElementById("lead_time_legs").value],
+        ["wielkosc_partii", document.getElementById("lot_size_legs").value],
+        ["na_stanie", document.getElementById("in_stock_legs").value]
+    ])
+    //console.log(mrp_Nogi.get("czas_realizacji")+" "+mrp_Nogi.get("wielkosc_partii")+" "+mrp_Nogi.get("na_stanie"));
+    document.getElementById("legs_bio").innerHTML = "Czas realizacji = " + parseInt(mrp_Nogi.get("czas_realizacji")) + "<br>" + "Wielkość partii = " + parseInt(mrp_Nogi.get("wielkosc_partii")) + "<br>" + "Poziom BOM = 2" + "<br>" + "Na stanie = " + parseInt(mrp_Nogi.get("na_stanie"));
+    return mrp_Nogi;
+}
+
+function MRP_Stelaze_Map() {
+    const mrp_Stelaze = new Map ([
+        ["czas_realizacji", document.getElementById("lead_time_racks").value],
+        ["wielkosc_partii", document.getElementById("lot_size_racks").value],
+        ["na_stanie", document.getElementById("in_stock_racks").value]
+    ])
+    //console.log(mrp_Stelaze.get("czas_realizacji")+" "+mrp_Stelaze.get("wielkosc_partii")+" "+mrp_Stelaze.get("na_stanie"));
+    document.getElementById("racks_bio").innerHTML = "Czas realizacji = " + parseInt(mrp_Stelaze.get("czas_realizacji")) + "<br>" + "Wielkość partii = " + parseInt(mrp_Stelaze.get("wielkosc_partii")) + "<br>" + "Poziom BOM = 2" + "<br>" + "Na stanie = " + parseInt(mrp_Stelaze.get("na_stanie"));
+    return mrp_Stelaze;
+}

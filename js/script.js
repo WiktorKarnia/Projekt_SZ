@@ -65,7 +65,7 @@ function MRP_Mapper(id1, id2, id3) {
     ])
     //console.log("Czas realizacji: " + Mapp.get("czas_realizacji") +" "+ "Wielkosc partii: " + Mapp.get("wielkosc_partii") +" "+"Na stanie: "+ Mapp.get("na_stanie"));
 }*/
-
+/*
 function MRP_Materace_Map() {
     const mrp_Materace = new Map ([
         ["czas_realizacji", document.getElementById("lead_time_matt").value],
@@ -116,7 +116,7 @@ function MRP_Stelaze_Map() {
     //console.log(mrp_Stelaze.get("czas_realizacji")+" "+mrp_Stelaze.get("wielkosc_partii")+" "+mrp_Stelaze.get("na_stanie"));
     document.getElementById("racks_bio").innerHTML = "Czas realizacji = " + parseInt(mrp_Stelaze.get("czas_realizacji")) + "<br>" + "Wielkość partii = " + parseInt(mrp_Stelaze.get("wielkosc_partii")) + "<br>" + "Poziom BOM = 2" + "<br>" + "Na stanie = " + parseInt(mrp_Stelaze.get("na_stanie"));
 }
-
+*/
 var demand_val;
 var production_val;
 var val;

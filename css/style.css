@@ -133,7 +133,7 @@ body {
     font-size: 20px;
     line-height: 62px
 }
-.main_item_input {
+.main_item_input, .marakuja  {
     margin-top: 12px;
     height: 35px;
     border: 1px solid #000;
