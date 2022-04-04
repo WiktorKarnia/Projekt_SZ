@@ -411,7 +411,8 @@ function check_values_mrp(){
                     //console.log(document.getElementsByClassName("marakuja").value);
                     if(tables[i]== 'mattres_table'){
                         console.log(MRP_Materace_Map().get("czas_realizacji")); 
-                        table.rows[2].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        document.getElementById("pp"+(0+parseInt(MRP_Materace_Map().get("czas_realizacji")))).value = cell.innerHTML;
+                        // table.rows[2].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
                         table.rows[6].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'frame_table'){
@@ -431,7 +432,9 @@ function check_values_mrp(){
                     }
                     else{
                         console.log(MRP_Stelaze_Map().get("czas_realizacji")); 
-                        table.rows[2].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        document.getElementById("pp4"+(0+parseInt(MRP_Stelaze_Map().get("czas_realizacji")))).value = cell.innerHTML;
+                        //table.rows[2].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[3].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     //table.rows[2].cells[0+parseInt(document.getElementsByName(tables[i] + "_lead").value)].innerHTML = cell.innerHTML;

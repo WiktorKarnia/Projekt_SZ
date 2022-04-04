@@ -240,12 +240,14 @@ function GHP_available(e) {
 function clear_mrp_tables() {
     var tables = ["mattres_table", "frame_table", "planks_table", "legs_table", "stelaz_table"]
     var arrayLength = tables.length;
+    var counter = 0;
     for (var i = 0; i < arrayLength; i++) {
         var table=document.getElementById(tables[i]);
         for (var r = 1, row; row = table.rows[r]; r++) {
             if(r == 2){
                 for (var c = 1, cell; cell = row.cells[c]; c++) {
-                    cell.innerHTML = "<input type='number' min='0' class='table_input' id='pp"+String(c)+"' style='width:30px;height:30px;' oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null'>";
+                    counter++
+                    cell.innerHTML = "<input type='number' min='0' class='table_input' id='pp"+String(counter)+"' style='width:30px;height:30px;' oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null'>";
                 }
             }
             else {
