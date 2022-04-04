@@ -254,17 +254,47 @@ function check_values(){
     //show();
     
     if(available_arr.every(v => v >= 0)){
-        clear_mrp_tables()
-        MRP_Ramy_Materace();
-        check_values_mrp();
-        //check_check();
-        GHP_events_MRP();
+        
+        if(better_of() == true) { //...&....&....
+            clear_mrp_tables()
+            MRP_Ramy_Materace();
+            check_values_mrp();
+            //check_check();
+            GHP_events_MRP();
+        }else{
+            document.getElementById("tables").style.display="none";
+            alert("Potrzebujemy więcej czasu!");
+        }
     }
     else{
-        alert("Proszę sprawdzić czy wszystkie wartości są odpowiednio podane!")
+        alert("Proszę sprawdzić czy wszystkie wartości są odpowiednio podane!");
     }
     
 }
+
+function better_of(){
+    for (let i = 0; i < demand_val.length; i++) {
+        if (demand_val[i] != "") {
+            //console.log(demand_val.indexOf(demand_val[i])+1);
+            var smt = demand_val.indexOf(demand_val[i])+1;
+            break
+        }
+    }
+    //console.log(smt);
+    var deski_r_g = parseInt(document.getElementById("lead_time_boards").value)+parseInt(document.getElementById("lead_time_frame").value)+parseInt(document.getElementById("lead_time").value);
+    var nogi_r_g = parseInt(document.getElementById("lead_time_legs").value)+parseInt(document.getElementById("lead_time_frame").value)+parseInt(document.getElementById("lead_time").value);
+    var stelaze_r_g = parseInt(document.getElementById("lead_time_racks").value)+parseInt(document.getElementById("lead_time_frame").value)+parseInt(document.getElementById("lead_time").value);
+    //console.log(deski_r_g);
+    //console.log(nogi_r_g);
+    //console.log(stelaze_r_g);
+    
+    if (smt >= deski_r_g && nogi_r_g && stelaze_r_g) {
+        return true
+    } else {
+        return false
+    }
+}
+
 
 
 
