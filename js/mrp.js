@@ -24,13 +24,24 @@ function MRP_Ramy_Materace() {
         neded.push(cell.innerHTML);
     }
     //console.log(neded);
+    var bought = [];
+    var row = table.rows[2];
+    var counter = 0;
+    for (var c = 1, cell; cell = row.cells[c]; c++) {
+        counter++
+        bought.push(document.getElementById('pp'+counter).value);
+    }
+    
+    console.log("Materace: ", bought);
+
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_matt").value);
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         if(neded[c-1] != ''){
             in_stock = in_stock - parseInt(neded[c-1]);
             if(in_stock >= 0){
-                cell.innerHTML = in_stock;
+                    cell.innerHTML = in_stock;
+                
             }
             else{
                 if(in_stock + parseInt(document.getElementById("lot_size_matt").value) >= 0){
@@ -94,6 +105,14 @@ function MRP_Ramy_Materace() {
         neded.push(cell.innerHTML);
     }
     //console.log(neded);
+    var bought = [];
+    var row = table.rows[2];
+    var counter = -1;
+    for (var c = 1, cell; cell = row.cells[c]; c++) {
+        counter++
+        bought.push(document.getElementById('pp1'+counter).value);
+    }
+    console.log("Ramy: ", bought);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_frame").value);
@@ -172,6 +191,14 @@ function MRP_Ramy_Materace() {
         neded.push(cell.innerHTML);
     }
     //console.log(neded);
+    var bought = [];
+    var row = table.rows[2];
+    var counter = -1;
+    for (var c = 1, cell; cell = row.cells[c]; c++) {
+        counter++
+        bought.push(document.getElementById('pp2'+counter).value);
+    }
+    console.log("Deski: ", bought);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_boards").value);
@@ -245,6 +272,14 @@ function MRP_Ramy_Materace() {
         neded.push(cell.innerHTML);
     }
     //console.log(neded);
+    var bought = [];
+    var row = table.rows[2];
+    var counter = -1;
+    for (var c = 1, cell; cell = row.cells[c]; c++) {
+        counter++
+        bought.push(document.getElementById('pp3'+counter).value);
+    }
+    console.log("Nogi: ", bought);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_legs").value);
@@ -316,6 +351,14 @@ function MRP_Ramy_Materace() {
         neded.push(cell.innerHTML);
     }
     //console.log(neded);
+    var bought = [];
+    var row = table.rows[2];
+    var counter = -1;
+    for (var c = 1, cell; cell = row.cells[c]; c++) {
+        counter++
+        bought.push(document.getElementById('pp4'+counter).value);
+    }
+    console.log("Stelaże: ", bought);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_racks").value);
@@ -368,6 +411,7 @@ function MRP_Ramy_Materace() {
             cell.innerHTML = in_stock;
         }
     }      
+    check_values_mrp();
 }
 
 function check_values_mrp(){
@@ -410,28 +454,34 @@ function check_values_mrp(){
                     //console.log(document.getElementsByName(tables[i] + "_lead").value);
                     //console.log(document.getElementsByClassName("marakuja").value);
                     if(tables[i]== 'mattres_table'){
-                        console.log(MRP_Materace_Map().get("czas_realizacji")); 
                         document.getElementById("pp"+(0+parseInt(MRP_Materace_Map().get("czas_realizacji")))).value = cell.innerHTML;
                         // table.rows[2].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[3].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'frame_table'){
-                        console.log(MRP_Rama_Map().get("czas_realizacji")); 
-                        table.rows[2].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        //console.log(MRP_Rama_Map().get("czas_realizacji")); 
+                        document.getElementById("pp1"+(0+parseInt(MRP_Rama_Map().get("czas_realizacji")))).value = cell.innerHTML;
+                        //table.rows[2].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[3].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'planks_table'){
-                        console.log(MRP_Deski_Map().get("czas_realizacji")); 
-                        table.rows[2].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        //console.log(MRP_Deski_Map().get("czas_realizacji")); 
+                        document.getElementById("pp2"+(0+parseInt(MRP_Deski_Map().get("czas_realizacji")))).value = cell.innerHTML;
+                        //table.rows[2].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[3].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'legs_table'){
-                        console.log(MRP_Nogi_Map().get("czas_realizacji")); 
-                        table.rows[2].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        //console.log(MRP_Nogi_Map().get("czas_realizacji")); 
+                        document.getElementById("pp3"+(0+parseInt(MRP_Nogi_Map().get("czas_realizacji")))).value = cell.innerHTML;
+                        //table.rows[2].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[3].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else{
-                        console.log(MRP_Stelaze_Map().get("czas_realizacji")); 
+                        //console.log(MRP_Stelaze_Map().get("czas_realizacji")); 
                         document.getElementById("pp4"+(0+parseInt(MRP_Stelaze_Map().get("czas_realizacji")))).value = cell.innerHTML;
                         //table.rows[2].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
                         table.rows[3].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
@@ -440,10 +490,11 @@ function check_values_mrp(){
                     //table.rows[2].cells[0+parseInt(document.getElementsByName(tables[i] + "_lead").value)].innerHTML = cell.innerHTML;
                     cell.innerHTML = 'Planowane zamówiena'
                 }
-                console.log(buy);
+                //console.log(buy);
             }
         }
     }
+    /*
     if(results2.includes(false)){
         show()
         //alert("Nie jesteśmy w stanie wyprodukować łóżek tak szybko!");
@@ -452,6 +503,7 @@ function check_values_mrp(){
         //console.log("tity");
         show()
     }
+    */
 }
 
 function MRP_Materace_Map() {

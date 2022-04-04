@@ -18,7 +18,7 @@ function GHP_events_MRP() {
         var table=document.getElementById(tables[i]);
         var row = table.rows[2];
         for (var c = 1, cell; cell = row.cells[c]; c++) {
-            cell.addEventListener('input', test_listeners);
+            cell.addEventListener('input',  MRP_Ramy_Materace);
  
         }
     }

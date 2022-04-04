@@ -283,10 +283,11 @@ function check_values(){
 }
 
 function better_of(){
-    for (let i = 0; i < demand_val.length; i++) {
-        if (demand_val[i] != "") {
-            //console.log(demand_val.indexOf(demand_val[i])+1);
-            var smt = demand_val.indexOf(demand_val[i])+1;
+    for (let i = 0; i < production_val.length; i++) {
+        if (production_val[i] != '') {
+            //console.log(production_val[i]);
+            //console.log(production_val.indexOf(production_val[i])+1);
+            var smt = production_val.indexOf(production_val[i])+1;
             break
         }
     }
