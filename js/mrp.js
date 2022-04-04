@@ -411,22 +411,27 @@ function check_values_mrp(){
                     if(tables[i]== 'mattres_table'){
                         console.log(MRP_Materace_Map().get("czas_realizacji")); 
                         table.rows[2].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[6].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'frame_table'){
                         console.log(MRP_Rama_Map().get("czas_realizacji")); 
                         table.rows[2].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[6].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'planks_table'){
                         console.log(MRP_Deski_Map().get("czas_realizacji")); 
                         table.rows[2].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[6].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'legs_table'){
                         console.log(MRP_Nogi_Map().get("czas_realizacji")); 
                         table.rows[2].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[6].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else{
                         console.log(MRP_Stelaze_Map().get("czas_realizacji")); 
                         table.rows[2].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = cell.innerHTML;
+                        table.rows[6].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     //table.rows[2].cells[0+parseInt(document.getElementsByName(tables[i] + "_lead").value)].innerHTML = cell.innerHTML;
                     cell.innerHTML = 'Planowane zamówiena'
