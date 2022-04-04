@@ -241,13 +241,19 @@ function clear_mrp_tables() {
     for (var i = 0; i < arrayLength; i++) {
         var table=document.getElementById(tables[i]);
         for (var r = 1, row; row = table.rows[r]; r++) {
-            if (r < 7) {
+            if(r == 2){
+                for (var c = 1, cell; cell = row.cells[c]; c++) {
+                    cell.innerHTML.value = '';
+                }
+            }
+            else {
                 for (var c = 1, cell; cell = row.cells[c]; c++) {
                     cell.innerHTML = '';
                 }
             }
         }
     }
+
 }
 
 function check_values(){

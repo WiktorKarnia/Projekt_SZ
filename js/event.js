@@ -10,6 +10,7 @@ function GHP_events() {
         }  
     }
 }
+
 function GHP_events_MRP() {
     var tables = ["mattres_table", "frame_table", "planks_table", "legs_table", "stelaz_table"]
     var arrayLength = tables.length;
@@ -17,12 +18,12 @@ function GHP_events_MRP() {
         var table=document.getElementById(tables[i]);
         var row = table.rows[2];
         for (var c = 1, cell; cell = row.cells[c]; c++) {
-            cell.document.createElement("input");
             cell.addEventListener('input', test_listeners);
  
         }
     }
 }
+
 function test_listeners(){
     console.log("test")
 }
