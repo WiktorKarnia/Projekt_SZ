@@ -294,7 +294,7 @@ function better_of(){
     //console.log(nogi_r_g);
     //console.log(stelaze_r_g);
     
-    if (smt >= deski_r_g && nogi_r_g && stelaze_r_g) {
+    if (smt >= deski_r_g && smt >= nogi_r_g && smt >= stelaze_r_g) {
         return true
     } else {
         return false
