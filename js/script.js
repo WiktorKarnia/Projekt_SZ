@@ -34,7 +34,7 @@ function show(){
     MRP_Nogi_Map();
     MRP_Stelaze_Map();
     
-    GHP_events_MRP();
+    
 
     scroll("mattres_table");
     /*
@@ -258,6 +258,7 @@ function check_values(){
         MRP_Ramy_Materace();
         check_values_mrp();
         //check_check();
+        GHP_events_MRP();
     }
     else{
         alert("Proszę sprawdzić czy wszystkie wartości są odpowiednio podane!")

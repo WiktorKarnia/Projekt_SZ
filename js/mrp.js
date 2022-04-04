@@ -387,6 +387,7 @@ function check_values_mrp(){
                 var cell = row.cells[0];
                 results.push(isNaN(cell.innerHTML));
                 //console.log(results);
+                cell.innerHTML = 'Przewidywane zapotrzebowanie'
             }
         }
     }

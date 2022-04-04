@@ -17,6 +17,7 @@ function GHP_events_MRP() {
         var table=document.getElementById(tables[i]);
         var row = table.rows[2];
         for (var c = 1, cell; cell = row.cells[c]; c++) {
+            cell.document.createElement("input");
             cell.addEventListener('input', test_listeners);
  
         }
