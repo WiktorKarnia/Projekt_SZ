@@ -243,7 +243,7 @@ function clear_mrp_tables() {
         for (var r = 1, row; row = table.rows[r]; r++) {
             if(r == 2){
                 for (var c = 1, cell; cell = row.cells[c]; c++) {
-                    cell.innerHTML.value = '';
+                    cell.innerHTML = "<input type='number' min='0' class='table_input' id='pp"+String(c)+"' style='width:30px;height:30px;' oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null'>";
                 }
             }
             else {
