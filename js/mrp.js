@@ -45,12 +45,39 @@ function MRP_Ramy_Materace() {
             }
             else{
                 if(in_stock + parseInt(document.getElementById("lot_size_matt").value) >= 0){
+                    for (x=-2; x<7; x++){
+                        if(document.getElementById('pp'+(c+x)).value != ''){
+                            in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value))+(parseInt(document.getElementById('pp' + (c+x)).value));
+                            
+                        }
+                        else{
+                            in_stock = parseInt(in_stock + (parseInt(document.getElementById("lot_size_matt").value)))-320;
+                            console.log(in_stock);
+                        
+                        }
+                    }
+                    /* nie działa bo dodają się przewidywanie na stanie
+                    if(document.getElementById('pp'+(c-2)).value != ''){
+                        in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value)) +  (parseInt(document.getElementById('pp' + (c-2)).value));
+                    }
+                    else{
+                        in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value));
+                    }
                     if(document.getElementById('pp'+(c-1)).value != ''){
                         in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value)) +  (parseInt(document.getElementById('pp' + (c-1)).value));
                     }
                     else{
                         in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value));
                     }
+                    for(var x = 0; x<7; x++){
+                        if(document.getElementById('pp'+(c+x)).value != ''){
+                            in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value)) +  (parseInt(document.getElementById('pp' + (c+x)).value));
+                        }
+                        else{
+                            in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value));
+                        }
+                    }*/
+
                     cell.innerHTML = in_stock;
 
                     var cellIndex = (parseInt(c));
