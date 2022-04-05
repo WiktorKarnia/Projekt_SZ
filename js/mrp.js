@@ -77,7 +77,7 @@ function MRP_Ramy_Materace() {
         else{
             cell.innerHTML = in_stock;
         }
-        add_available(mattres_table)
+        //add_available(mattres_table)
     }
 
 
@@ -417,27 +417,27 @@ function check_values_mrp(){
                     buy.push(cell.innerHTML)
                     if(tables[i]== 'mattres_table'){
                         document.getElementById("pp"+(0+parseInt(MRP_Materace_Map().get("czas_realizacji")))).value = cell.innerHTML;
-                        table.rows[3].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
+                        //table.rows[3].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Materace_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'frame_table'){
                         document.getElementById("pp1"+(0+parseInt(MRP_Rama_Map().get("czas_realizacji")))).value = cell.innerHTML;
-                        table.rows[3].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
+                        //table.rows[3].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Rama_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'planks_table'){
                         document.getElementById("pp2"+(0+parseInt(MRP_Deski_Map().get("czas_realizacji")))).value = cell.innerHTML;
-                        table.rows[3].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
+                        //table.rows[3].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Deski_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else if(tables[i]== 'legs_table'){
                         document.getElementById("pp3"+(0+parseInt(MRP_Nogi_Map().get("czas_realizacji")))).value = cell.innerHTML;
-                        table.rows[3].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
+                        //table.rows[3].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Nogi_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     else{
                         document.getElementById("pp4"+(0+parseInt(MRP_Stelaze_Map().get("czas_realizacji")))).value = cell.innerHTML;
-                        table.rows[3].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
+                        //table.rows[3].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = parseInt(table.rows[3].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML) - parseInt(cell.innerHTML);
                         table.rows[6].cells[0+parseInt(MRP_Stelaze_Map().get("czas_realizacji"))].innerHTML = '';
                     }
                     cell.innerHTML = 'Planowane zamówiena'
@@ -496,7 +496,7 @@ function MRP_Stelaze_Map() {
     document.getElementById("racks_bio").innerHTML = "Czas realizacji = " + parseInt(mrp_Stelaze.get("czas_realizacji")) + "<br>" + "Wielkość partii = " + parseInt(mrp_Stelaze.get("wielkosc_partii")) + "<br>" + "Poziom BOM = 2" + "<br>" + "Na stanie = " + parseInt(mrp_Stelaze.get("na_stanie"));
     return mrp_Stelaze;
 }
-
+/*
 function add_available(table_name){
     var table=table_name;
     if(table == mattres_table){            
@@ -514,4 +514,4 @@ function add_available(table_name){
     }
     check_values_mrp();
 }
-
+*/
