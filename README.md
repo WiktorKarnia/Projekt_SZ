@@ -1,4 +1,4 @@
-# Wersja 0.1 projektu z przedmiotu "Systemy Zintegrowane"
+# Wersja release projektu z przedmiotu "Systemy Zintegrowane"
 ### Autorzy:
 - Wiktor Karnia
 - Zuzanna Florczykiewicz
