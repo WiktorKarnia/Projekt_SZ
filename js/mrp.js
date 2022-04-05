@@ -2,6 +2,11 @@
 //var lead_time = ["lead_time_matt","lead_time_frame", "lead_time_boards", "lead_time_legs", "lead_time_racks"]
 //var lot_size = ["lot_size_matt", "lot_size_frame", "lot_size_boards", "lot_size_legs", "lot_size_racks"]
 // var in_stock = ["in_stock_matt", "in_stock_frame", "in_stock_boards", "in_stock_legs", "in_stock_racks"]
+var bought_materace = [];
+var bought_ramy = [];
+var bought_deski = [];
+var bought_nogi = [];
+var bought_stelaze = [];
 
 function MRP_Ramy_Materace() {
 
@@ -24,15 +29,15 @@ function MRP_Ramy_Materace() {
         neded.push(cell.innerHTML);
     }
     //console.log(neded);
-    var bought = [];
     var row = table.rows[2];
     var counter = 0;
+    bought_materace = [];
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         counter++
-        bought.push(document.getElementById('pp'+counter).value);
+        bought_materace.push(document.getElementById('pp'+counter).value);
     }
     
-    console.log("Materace: ", bought);
+    //console.log("Materace: ", bought_materace);
 
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_matt").value);
@@ -41,16 +46,11 @@ function MRP_Ramy_Materace() {
             in_stock = in_stock - parseInt(neded[c-1]);
             if(in_stock >= 0){
                     cell.innerHTML = in_stock;
-                
             }
             else{
                 if(in_stock + parseInt(document.getElementById("lot_size_matt").value) >= 0){
-                    if(document.getElementById('pp'+(c-1)).value != ''){
-                        in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value)) +  (parseInt(document.getElementById('pp' + (c-1)).value));
-                    }
-                    else{
-                        in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value));
-                    }
+                    in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value));
+
                     cell.innerHTML = in_stock;
 
                     var cellIndex = (parseInt(c));
@@ -89,6 +89,7 @@ function MRP_Ramy_Materace() {
         else{
             cell.innerHTML = in_stock;
         }
+        add_available(mattres_table)
     }
 
 
@@ -110,14 +111,13 @@ function MRP_Ramy_Materace() {
         neded.push(cell.innerHTML);
     }
     //console.log(neded);
-    var bought = [];
     var row = table.rows[2];
     var counter = -1;
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         counter++
-        bought.push(document.getElementById('pp1'+counter).value);
+        bought_ramy.push(document.getElementById('pp1'+counter).value);
     }
-    console.log("Ramy: ", bought);
+    //console.log("Ramy: ", bought_ramy);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_frame").value);
@@ -196,14 +196,13 @@ function MRP_Ramy_Materace() {
         neded.push(cell.innerHTML);
     }
     //console.log(neded);
-    var bought = [];
     var row = table.rows[2];
     var counter = -1;
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         counter++
-        bought.push(document.getElementById('pp2'+counter).value);
+        bought_deski.push(document.getElementById('pp2'+counter).value);
     }
-    console.log("Deski: ", bought);
+    //console.log("Deski: ", bought_deski);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_boards").value);
@@ -277,14 +276,13 @@ function MRP_Ramy_Materace() {
         neded.push(cell.innerHTML);
     }
     //console.log(neded);
-    var bought = [];
     var row = table.rows[2];
     var counter = -1;
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         counter++
-        bought.push(document.getElementById('pp3'+counter).value);
+        bought_nogi.push(document.getElementById('pp3'+counter).value);
     }
-    console.log("Nogi: ", bought);
+    //console.log("Nogi: ", bought_nogi);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_legs").value);
@@ -361,9 +359,9 @@ function MRP_Ramy_Materace() {
     var counter = -1;
     for (var c = 1, cell; cell = row.cells[c]; c++) {
         counter++
-        bought.push(document.getElementById('pp4'+counter).value);
+        bought_stelaze.push(document.getElementById('pp4'+counter).value);
     }
-    console.log("Stelaże: ", bought);
+    //console.log("Stelaże: ", bought_stelaze);
     
     var row = table.rows[3];
     var in_stock = parseInt(document.getElementById("in_stock_racks").value);
@@ -416,7 +414,7 @@ function MRP_Ramy_Materace() {
             cell.innerHTML = in_stock;
         }
     }      
-    check_values_mrp();
+    
 }
 
 function check_values_mrp(){
@@ -569,3 +567,37 @@ function MRP_Stelaze_Map() {
     document.getElementById("racks_bio").innerHTML = "Czas realizacji = " + parseInt(mrp_Stelaze.get("czas_realizacji")) + "<br>" + "Wielkość partii = " + parseInt(mrp_Stelaze.get("wielkosc_partii")) + "<br>" + "Poziom BOM = 2" + "<br>" + "Na stanie = " + parseInt(mrp_Stelaze.get("na_stanie"));
     return mrp_Stelaze;
 }
+
+function add_available(table_name){
+    //console.log(bought_materace);
+    //console.log(bought_ramy);
+    //console.log(bought_deski);
+    //console.log(bought_nogi);
+    //console.log(bought_stelaze);
+
+    var table=table_name;
+    if(table == mattres_table){            
+        var arrLength = bought_materace.length;
+        for (var i = 0; i < arrLength; i++){
+            if(bought_materace[i] != ''){
+                var value = bought_materace[i];
+                var row = table.rows[3];
+                for (var c = i+1, cell; cell = row.cells[c]; c++){
+                    //var count = 10;
+                    //count--;
+                    //console.log(bought_materace);
+                    //console.log(i);
+                    //console.log(i+1);
+                    //console.log(document.getElementById('mattres_table').rows[rowIndex].cells[cellIndex].innerHTML);
+                    //console.log(parseInt(bought_materace[i]));
+                    //console.log(parseInt(cell.innerHTML) + (parseInt(bought_materace[i])));
+                    //console.log((parseInt(bought_materace[i]))*count)
+                    cell.innerHTML = parseInt(cell.innerHTML) + (parseInt(value));
+                }
+                break;
+            }    
+        }
+    }
+    check_values_mrp();
+}
+

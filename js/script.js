@@ -257,6 +257,11 @@ function clear_mrp_tables() {
             }
         }
     }
+    bought_materace = [];
+    bought_ramy = [];
+    bought_deski = [];
+    bought_nogi = [];
+    bought_stelaze = [];
 
 }
 
@@ -267,11 +272,12 @@ function check_values(){
         
         if(better_of() == true) { 
             clear_mrp_tables()
+            GHP_events_MRP();
             MRP_Ramy_Materace();
             check_values_mrp();
             //check_check();
-            GHP_events_MRP();
-        }else{
+        }
+        else{
             document.getElementById("tables").style.display="none";
             alert("Potrzebujemy więcej czasu!");
         }
