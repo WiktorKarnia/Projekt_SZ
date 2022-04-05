@@ -45,7 +45,12 @@ function MRP_Ramy_Materace() {
             }
             else{
                 if(in_stock + parseInt(document.getElementById("lot_size_matt").value) >= 0){
-                    in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value));
+                    if(document.getElementById('pp'+(c-1)).value != ''){
+                        in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value)) +  (parseInt(document.getElementById('pp' + (c-1)).value));
+                    }
+                    else{
+                        in_stock = in_stock + (parseInt(document.getElementById("lot_size_matt").value));
+                    }
                     cell.innerHTML = in_stock;
 
                     var cellIndex = (parseInt(c));
